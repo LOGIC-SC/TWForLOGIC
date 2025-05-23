@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>关于 LOGIC</title>
+</head>
+<body>
+    <div class="container" style="display: flex; max-width: 1200px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div class="tabs" style="width: 200px; border-right: 1px solid #ddd;">
+            <div class="tab" style="padding: 15px 20px; cursor: pointer; transition: background 0.3s;" onclick="switchTab('developers')" id="tab-developers">关于开发者</div>
+            <div class="tab" style="padding: 15px 20px; cursor: pointer; transition: background 0.3s;" onclick="switchTab('about')" id="tab-about">关于TW for LOGIC</div>
+        </div>
+        
+        <div class="content" style="flex: 1; padding: 20px;">
+            <div id="developers" class="tab-content" style="display: block;">
+                <div class="developer-card" style="display: flex; align-items: center; margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <img src="./zhiyu-hd.jpg" class="avatar" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 20px;" alt="智宇 HD">
+                    <div class="developer-info" style="flex: 1;">
+                        <div class="name" style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">智宇 HD</div>
+                        <a href="https://zhiyuhub.top" class="website" style="color: #2196F3; text-decoration: none;" target="_blank">zhiyuhub.top</a>
+                    </div>
+                </div>
+
+                <div class="developer-card" style="display: flex; align-items: center; margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <img src="./cyberexplorer.jpg" class="avatar" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 20px;" alt="Cyberexplorer">
+                    <div class="developer-info" style="flex: 1;">
+                        <div class="name" style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">Cyberexplorer</div>
+                        <a href="https://lanwywritexu.github.io" class="website" style="color: #2196F3; text-decoration: none;" target="_blank">lanwywritexu.github.io</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about" class="tab-content" style="display: none;">
+                <h2 style="margin-top: 0;">关于TW for LOGIC</h2>
+                <p style="margin-bottom: 0;">此处为关于TW for LOGIC的详细介绍内容...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            // 移除所有标签的激活状态
+            document.querySelectorAll('.tab').forEach(tab => 
+                tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => 
+                content.classList.remove('active'));
+
+            // 设置当前选中状态
+            document.querySelector(`#${tabId}`).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
